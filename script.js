@@ -1,20 +1,26 @@
-// 1. Create a concatenated string variable with embedded variables
+// Create a concatenated string variable with embedded variables
 let wizardName = "Merlin";
 let title = "the Wise";
 let spellPower = 9001;
 let concatenatedString = "Wizard: " + wizardName + " " + title + ", Power Level: " + spellPower;
-console.log(concatenatedString);
 
-// 2. If Conditional Statement (Wizard's Power Evaluation)
+// Display concatenated string
+document.getElementById('output').innerHTML += `<p>${concatenatedString}</p>`;
+
+// If Conditional Statement (Wizard's Power Evaluation)
+let powerEvaluation;
 if (spellPower > 9000) {
-    console.log(wizardName + " is a legendary wizard with unmatched power!");
+    powerEvaluation = wizardName + " is a legendary wizard with unmatched power!";
 } else if (spellPower >= 5000) {
-    console.log(wizardName + " is a powerful wizard but not quite legendary.");
+    powerEvaluation = wizardName + " is a powerful wizard but not quite legendary.";
 } else {
-    console.log(wizardName + " still has much to learn.");
+    powerEvaluation = wizardName + " still has much to learn.";
 }
 
-// 3. Switch Statement (Choosing a Spell Based on the Day)
+// Display power evaluation
+document.getElementById('output').innerHTML += `<p>${powerEvaluation}</p>`;
+
+// Switch Statement (Choosing a Spell Based on the Day)
 let dayOfWeek = 5;
 let spellOfTheDay;
 
@@ -38,13 +44,14 @@ switch (dayOfWeek) {
         spellOfTheDay = "Restoration Ritual";
 }
 
-console.log("Today's spell for " + wizardName + ": " + spellOfTheDay);
+// Display spell of the day
+document.getElementById('output').innerHTML += `<p>Today's spell for ${wizardName}: ${spellOfTheDay}</p>`;
 
-// 4. String Method (Manipulate Wizard's Title)
+// String Method (Manipulate Wizard's Title)
 let magicAnnouncement = "Behold, " + wizardName + " " + title + " casts a mighty spell!";
-console.log(magicAnnouncement.toLowerCase()); // Make the announcement lower case for a dramatic whisper effect
+document.getElementById('output').innerHTML += `<p>${magicAnnouncement.toLowerCase()}</p>`; // Make the announcement lower case for a dramatic whisper effect
 
-// 5. Number Method (Adjust Wizard's Power)
+// Number Method (Adjust Wizard's Power)
 let powerIncrease = 1.245;  // A magic potion increases the power level by 24.5%
 let boostedPower = spellPower * powerIncrease;
-console.log("After drinking the magic potion, " + wizardName + "'s new power level is " + boostedPower.toFixed(2) + "!");
+document.getElementById('output').innerHTML += `<p>After drinking the magic potion, ${wizardName}'s new power level is ${boostedPower.toFixed(2)}!</p>`;
